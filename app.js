@@ -4,6 +4,7 @@ const cetagoryItem = async () => {
   const data = await res.json();
   // console.log(data.data);
   displayCetagory(data.data.news_category);
+
 }
 const displayCetagory = async (cetagorys) => {
   const cetagoryName = document.getElementById('cetagory-name');
@@ -40,7 +41,7 @@ const displayCatagoryId = async (cetagorysID) => {
   const totalCountNews = document.getElementById('total-count-news');
   totalCountNews.innerText = cetagorysID.length + ' ' + 'items for category';
   if (cetagorysID.length === 0) {
-    console.log('no data found')
+    totalCountNews.innerText = 'NO data found';
 
   }
   console.log(cetagorysID.length);
